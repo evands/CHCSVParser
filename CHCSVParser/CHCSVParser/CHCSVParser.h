@@ -159,6 +159,13 @@ typedef NS_ENUM(NSInteger, CHCSVErrorCode) {
 @property (nonatomic, assign) BOOL recognizesLeadingEqualSign;
 
 /**
+ *  If @c YES, then double quotes in delimited fields are treated as plain text
+ *  The default value is @c NO.
+ *  @warning Do not mutate this property after parsing has begun
+ */
+@property (nonatomic, assign) BOOL treatDoubleQootesAsPlainText;
+
+/**
  *  The number of bytes that have been read from the input stream so far
  *
  *  This property is key-value observable.

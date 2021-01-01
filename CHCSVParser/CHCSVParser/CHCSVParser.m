@@ -378,7 +378,7 @@ NSString *const CHCSVErrorDomain = @"com.davedelong.csv";
     // consume leading whitespace
     [self _parseFieldWhitespace];
     
-    if ([self _peekCharacter] == DOUBLE_QUOTE) {
+    if (!_treatDoubleQootesAsPlainText && [self _peekCharacter] == DOUBLE_QUOTE) {
         parsedField = [self _parseEscapedField];
     } else if (_recognizesLeadingEqualSign && [self _peekCharacter] == EQUAL && [self _peekPeekCharacter] == DOUBLE_QUOTE) {
         [self _advance]; // consume the equal sign
