@@ -808,7 +808,8 @@ NSArray *_CHCSVParserParse(NSInputStream *inputStream, CHCSVParserOptions option
     parser.recognizesComments = !!(options & CHCSVParserOptionsRecognizesComments);
     parser.trimsWhitespace = !!(options & CHCSVParserOptionsTrimsWhitespace);
     parser.recognizesLeadingEqualSign = !!(options & CHCSVParserOptionsRecognizesLeadingEqualSign);
-    
+	parser.treatDoubleQootesAsPlainText = !!(options & CHCSVParserOptionsTreatsDoubleQootesAsPlainText);
+	
     [parser parse];
     
     if (aggregator.error != nil) {

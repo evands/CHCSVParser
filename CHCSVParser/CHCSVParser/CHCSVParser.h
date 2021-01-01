@@ -373,7 +373,14 @@ typedef NS_OPTIONS(NSUInteger, CHCSVParserOptions) {
      *  @see CHCSVParser.recognizesLeadingEqualSign
      *  @link http://edoceo.com/utilitas/csv-file-format
      */
-    CHCSVParserOptionsRecognizesLeadingEqualSign = 1 << 5
+    CHCSVParserOptionsRecognizesLeadingEqualSign = 1 << 5,
+	/**
+	 *  Some malformed files use double quotes within delimited fields
+	 *  without escaping them.
+	 *  If you specify this option, there must be no escaped fields.
+	 *  @see CHCSVParser.treatesDoubleQuotesAsPlainText
+	 */
+	CHCSVParserOptionsTreatsDoubleQootesAsPlainText = 1 << 6
 };
 
 /**
