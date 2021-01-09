@@ -788,7 +788,8 @@ NSString *const CHCSVErrorDomain = @"com.davedelong.csv";
         [self.lines addObject:line];
     } else {
         [parser cancelParsing];
-        self.error = [NSError errorWithDomain:CHCSVErrorDomain code:CHCSVErrorCodeIncorrectNumberOfFields userInfo:nil];
+		self.error = [NSError errorWithDomain:CHCSVErrorDomain code:CHCSVErrorCodeIncorrectNumberOfFields userInfo:@{@"First Line":self.firstLine,
+																													 @"Current Line":self.currentLine}];
     }
     self.currentLine = nil;
 }
